@@ -2,24 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Get started with Middle Out's photo, video and audio editors.">
+  <title>Middle Out — Getting started</title>
   <style>
-    body {
-      font: 15px -apple-system, sans-serif;
-      margin: 0;
-      padding: 16px;
-      background: transparent;
-      color: #ddd;
+    :root {
+      color-scheme: light dark;
+      --text: #1c1c1e;
+      --secondary: #48484a;
+      --separator: rgba(60, 60, 67, 0.18);
     }
-    a { color: #7abaff; }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: transparent;
+      color: var(--text);
+      font: 16px/1.5 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      -webkit-text-size-adjust: 100%;
+      overflow-wrap: break-word;
+    }
+
+    main {
+      max-width: 38rem;
+      margin: 0 auto;
+      padding: 24px 22px 28px;
+    }
+
+    h1, h2, p, dl, dd { margin: 0; }
+
+    h1 {
+      max-width: 18ch;
+      margin-bottom: 12px;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      text-wrap: balance;
+    }
+
+    h2 {
+      margin-bottom: 8px;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+
+    p, dd { color: var(--secondary); }
+    strong, dt { color: var(--text); font-weight: 600; }
+    dl, section { margin-top: 24px; }
+    dl > div + div { margin-top: 14px; }
+    dt { margin-bottom: 2px; }
+
+    .access {
+      padding-top: 22px;
+      border-top: 1px solid var(--separator);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f2f2f7;
+        --secondary: #bcbcC4;
+        --separator: rgba(235, 235, 245, 0.18);
+      }
+    }
   </style>
 </head>
 <body>
-  <h3>Middle Out</h3>
-  <p>Welcome! Documentation and tutorials
-     are coming soon.</p>
-  <p><a href="https://example.com/changelog">
-     What's new</a></p>
+  <main>
+    <header>
+      <h1>Edit photos, video &amp; audio</h1>
+      <p>Choose <strong>Photo</strong>, <strong>Video</strong> or <strong>Audio</strong> below,
+        then open your media from <strong>Library</strong>, <strong>Files</strong> or
+        <strong>Clipboard</strong>.</p>
+    </header>
+
+    <dl aria-label="Editors">
+      <div>
+        <dt>Photo</dt>
+        <dd>Remove a strip and join the edges, leave a gap, or crop your image.</dd>
+      </div>
+      <div>
+        <dt>Video</dt>
+        <dd>Cut out sections, change the speed of a span, or select a loop.</dd>
+      </div>
+      <div>
+        <dt>Audio</dt>
+        <dd>Cut sections, adjust speed, or save just a selection.</dd>
+      </div>
+    </dl>
+
+    <section aria-labelledby="audio-heading">
+      <h2 id="audio-heading">Audio from a video</h2>
+      <p>Audio mode opens audio files and the audio track from videos.
+        With Audio selected, Library shows videos only. Opening a video here
+        loads its sound into the audio editor; the saved result is an audio file.</p>
+    </section>
+
+    <section class="access" aria-labelledby="access-heading">
+      <h2 id="access-heading">Try the editor before buying</h2>
+      <p>Import media, make edits and preview the result before unlocking.
+        Saving, copying and sharing require an active trial or subscription,
+        or a lifetime purchase. Tap <strong>Unlock</strong> above to see the available options.</p>
+    </section>
+  </main>
 </body>
 </html>

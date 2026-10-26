@@ -20,7 +20,7 @@
       margin: 0;
       background: transparent;
       color: var(--text);
-      font: 16px/1.5 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      font: 16px/1.4 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       -webkit-text-size-adjust: 100%;
       overflow-wrap: break-word;
     }
@@ -28,14 +28,13 @@
     main {
       max-width: 38rem;
       margin: 0 auto;
-      padding: 24px 22px 28px;
+      padding: 18px 20px 20px;
     }
 
     h1, h2, p, dl, dd { margin: 0; }
 
     h1 {
-      max-width: 18ch;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       font-size: 24px;
       line-height: 1.2;
       font-weight: 700;
@@ -44,7 +43,7 @@
     }
 
     h2 {
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       font-size: 17px;
       line-height: 1.35;
       font-weight: 650;
@@ -52,19 +51,24 @@
 
     p, dd { color: var(--secondary); }
     strong, dt { color: var(--text); font-weight: 600; }
-    dl, section { margin-top: 24px; }
-    dl > div + div { margin-top: 14px; }
-    dt { margin-bottom: 2px; }
+    dl, section { margin-top: 16px; }
+    dl > div {
+      display: grid;
+      grid-template-columns: 3.25em 1fr;
+      gap: 10px;
+      align-items: baseline;
+    }
+    dl > div + div { margin-top: 8px; }
 
     .access {
-      padding-top: 22px;
+      padding-top: 14px;
       border-top: 1px solid var(--separator);
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
         --text: #f2f2f7;
-        --secondary: #bcbcC4;
+        --secondary: #bcbcc4;
         --separator: rgba(235, 235, 245, 0.18);
       }
     }
@@ -75,37 +79,36 @@
     <header>
       <h1>Edit photos, video &amp; audio</h1>
       <p>Choose <strong>Photo</strong>, <strong>Video</strong> or <strong>Audio</strong> below,
-        then open your media from <strong>Library</strong>, <strong>Files</strong> or
+        then choose <strong>Library</strong>, <strong>Files</strong> or
         <strong>Clipboard</strong>.</p>
     </header>
 
     <dl aria-label="Editors">
       <div>
         <dt>Photo</dt>
-        <dd>Remove a strip and join the edges, leave a gap, or crop your image.</dd>
+        <dd>Remove a strip, leave a gap, or crop.</dd>
       </div>
       <div>
         <dt>Video</dt>
-        <dd>Cut out sections, change the speed of a span, or select a loop.</dd>
+        <dd>Cut sections, change speed, or loop.</dd>
       </div>
       <div>
         <dt>Audio</dt>
-        <dd>Cut sections, adjust speed, or save just a selection.</dd>
+        <dd>Cut, change speed, or save a selection.</dd>
       </div>
     </dl>
 
     <section aria-labelledby="audio-heading">
-      <h2 id="audio-heading">Audio from a video</h2>
-      <p>Audio mode opens audio files and the audio track from videos.
-        With Audio selected, Library shows videos only. Opening a video here
-        loads its sound into the audio editor; the saved result is an audio file.</p>
+      <h2 id="audio-heading">Audio from video</h2>
+      <p>Audio opens audio files or a video’s soundtrack. In Audio mode,
+        Library shows only videos; edits save as audio only.</p>
     </section>
 
     <section class="access" aria-labelledby="access-heading">
-      <h2 id="access-heading">Try the editor before buying</h2>
-      <p>Import media, make edits and preview the result before unlocking.
-        Saving, copying and sharing require an active trial or subscription,
-        or a lifetime purchase. Tap <strong>Unlock</strong> above to see the available options.</p>
+      <h2 id="access-heading">Try before buying</h2>
+      <p>Try edits and previews before buying. Saving, copying and sharing
+        require an active trial or subscription, or a lifetime purchase.
+        Tap <strong>Unlock</strong> above.</p>
     </section>
   </main>
 </body>
